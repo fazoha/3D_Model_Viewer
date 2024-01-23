@@ -7,6 +7,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 //test test 123
+//test test 2244
 
 //Keep the 3D object on a global variable so we can access it later
 let object;
