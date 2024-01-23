@@ -6,12 +6,12 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-//test test 123
-//test test 2244
 
-//Keep the 3D object on a global variable so we can access it later
+
+
+//Keep the 3D object on a global variable 
 let object;
-//OrbitControls allow the camera to move around the scene
+//OrbitControls allowing camera to move around in the scene
 let controls;
 
 let objToRender = "ducky";
@@ -24,21 +24,9 @@ function loadModel(){
     `models/${objToRender}/scene.gltf`,
     
     function (gltf) {
-      //If the file is loaded, add it to the scene
+      //add loaded file to the scene 
       object = gltf.scene;
-      //object.position.setX(50);
-      //Check if the model is the "phoenix", if so change the opacity and location so it looks better
-      if (objToRender === "phoenix"){
-        object.position.setY(-200);
-        object.traverse((child) => {
-          if (child.isMesh) {
-            // Reduce transparency by setting opacity to a value between 0 and 1
-            child.material.opacity = 1; // Adjust this value as needed
-            child.material.transparent = true; // Enable transparency
-            child.material.side = THREE.DoubleSide; // Render both sides of the mesh
-          }
-        });
-      }
+      
       
       scene.add(object);
       
